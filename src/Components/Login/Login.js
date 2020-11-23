@@ -1,0 +1,59 @@
+import React, { useState } from 'react';
+import './Login.css';
+
+import { Link } from 'react-router-dom';
+
+import Logo from '../../imgs/logo_transparent_background.png';
+
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+
+const Login = () => {
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+
+	function validateForm() {
+		return email.length > 0 && password.length > 0;
+	}
+
+	function handleSubmit(event) {
+		event.preventDefault();
+	}
+
+	return (
+		<div className='login-page'>
+			<div className='login-container'>
+				<img src={Logo} alt='logo' />
+				<div className='form-container'>
+					<Form onSubmit={handleSubmit}>
+						<Form.Group size='lg' controlId='email'>
+							<Form.Label>Email</Form.Label>
+							<Form.Control
+								autoFocus
+								type='email'
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}
+							/>
+						</Form.Group>
+						<Form.Group size='lg' controlId='password'>
+							<Form.Label>Password</Form.Label>
+							<Form.Control
+								type='password'
+								value={password}
+								onChange={(e) => setPassword(e.target.value)}
+							/>
+						</Form.Group>
+						<button type='submit' disabled={!validateForm()}>
+							Login
+						</button>
+					</Form>
+					<Link to={'/signup'}>
+						<p> New User? Sign Up Here</p>
+					</Link>
+				</div>
+			</div>
+		</div>
+	);
+};
+
+export default Login;
