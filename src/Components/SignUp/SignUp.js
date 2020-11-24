@@ -20,7 +20,6 @@ const Signup = () => {
 		<div className='registration-page'>
 			<div className='registration-container'>
 				<img src={Logo} alt='logo' />
-
 				<div className='form-container'>
 					<Form>
 						<Form.Row>
@@ -122,7 +121,7 @@ const Signup = () => {
 						</Form.Group>
 
 						<Button variant='primary' type='submit'>
-							Register
+							Sign Up
 						</Button>
 					</Form>
 				</div>

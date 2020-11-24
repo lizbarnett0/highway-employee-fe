@@ -43,9 +43,9 @@ const Login = () => {
 								onChange={(e) => setPassword(e.target.value)}
 							/>
 						</Form.Group>
-						<button type='submit' disabled={!validateForm()}>
+						<Button type='submit' disabled={!validateForm()}>
 							Login
-						</button>
+						</Button>
 					</Form>
 					<Link to={'/signup'}>
 						<p> New User? Sign Up Here</p>
