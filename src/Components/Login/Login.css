@@ -30,3 +30,14 @@
 p {
 	padding: 10px 0 10px 0;
 }
+
+p a:link,
+a:visited {
+	color: blue;
+	text-decoration: none;
+}
+p a:hover,
+a:visited:hover {
+	color: blue;
+	text-decoration: underline;
+}
